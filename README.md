@@ -17,7 +17,7 @@ Run with .conf file *-xlibre.conf, e.g `./build-forky configs-forky/lxqt-full-xl
 `Usage: ./build-forky <config_file> (presets are in configs-forky) `   
  `-help show this help `   
  `Example using one of the preset config files:`    
- `./build-forky configs-forky/lxqt-full.conf`
+ `./build-forky configs-forky/lxqt-full.conf`     
  `Example using one of the preset config files to install xlibre rather than xorg:`       
  `./build-forky configs-forky/lxqt-full-xlibre.conf`       
  `Example with custom config file:`    
