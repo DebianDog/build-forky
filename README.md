@@ -1,6 +1,11 @@
 ## build-forky
 ### Create a Debian forky minimal live system similar to 'DebianDog'
 
+See more info about usage and changes/fixes at https://forum.puppylinux.com/viewtopic.php?p=159473#p159473    
+
+#### Update 2025-12-01:    
+Added "extra-commands" script, will run inside chroot, based on the idea of @IdfbAn    
+
 This works very similar as the 'mklive-forky' script:    
 https://forum.puppylinux.com/viewtopic.php?t=15776     
 except that it's very much simplified.

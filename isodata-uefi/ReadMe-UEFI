@@ -1,0 +1,6 @@
+For manual (copying) USB install UEFI-boot, copy the folders EFI, boot, live, and the file grub.cfg to the root (/) of a FAT32 formatted partition, e.g. /mnt/sdb1.
+And it should boot, no bootloader install stuff required.
+
+Or: Create 2 partitions with Gparted, e.g. sdb1 (FAT32, can be very small) and sdb2 (EXT4) and ...
+Copy folders EFI, boot and the file grub.cfg to sdb1 and the 'live' folder to sdb2.
+

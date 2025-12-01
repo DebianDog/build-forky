@@ -14,6 +14,8 @@
 # ... removed xserver-xorg-legacy from installing in this script, added now to the configs
 # ... (will be xserver-xlibre-legacy if run with *-xlibre.conf)
 # 2025-11-05, install newest devuan-keyring on host before creating debootstrap base system
+# 2025-12-01, structure changes in repo, e.g. tar.gz archives are extracted
+# and added support for "extra-commands" script, will run /tmp/chroot/extra-commands
 
 # below uncommented will enable the snapshot repository, comment out to disable
 export SNAPSHOT="deb http://snapshot.debian.org/archive/debian/20240823 trixie main"
@@ -370,18 +372,19 @@ fi
 # create build_info.txt and build_setup.conf
 cr_build_info
 
-[ "$ISOUEFI" = "TRUE" ] && tar -zxf ../isodata-forky-uefi.tar.gz || tar -zxf ../isodata-forky.tar.gz
+#[ "$ISOUEFI" = "TRUE" ] && tar -zxf ../isodata-forky-uefi.tar.gz || tar -zxf ../isodata-forky.tar.gz
+[ "$ISOUEFI" = "TRUE" ] && cp -a ../isodata-uefi isodata || cp -a ../isodata isodata
 ok_or_failed
 
-echo -e "\e[0;36mExtracting...\033[0m"
-tar -zxf ../dog-boot-forky-20250929.tar.gz
+#echo -e "\e[0;36mExtracting...\033[0m"
+#tar -zxf ../dog-boot-forky-20250929.tar.gz
 echo -e "\e[0;36mCopy scripts, required for porteus-boot, to the chroot...\033[0m"
-cp -af dog-boot-forky-20250929/* chroot/
+cp -af ../dog-boot-forky-20250929/* chroot/
 ok_or_failed
 
-tar -zxf ../initrdport-bullseye.tar.gz
-echo -e "\e[0;36mCopy initrd skeleton, required for porteus-boot, to chroot/tmp ...\033[0m"
-cp -af initrdport-bullseye chroot/tmp/  # copy initrd skeleton to chroot/tmp/
+echo -e "\e[0;36mExtract initrd skeleton, required for porteus-boot, to chroot/tmp ...\033[0m"
+tar -zxf ../initrdport-bullseye.tar.gz -C chroot/tmp
+#cp -af initrdport-bullseye chroot/tmp/  # copy initrd skeleton to chroot/tmp/
 ok_or_failed
 
 echo -e "\e[0;36mCopy .deb packages from ../debs (if existing) to chroot/tmp/...\033[0m"
@@ -731,6 +734,9 @@ apt install locales -y
 dpkg-reconfigure locales
 fi
 
+# finally, run script /tmp/extra-commands
+/tmp/extra-commands
+
 echo "Cleaning..."
 rm -f var/lib/alsa/asound.state
 rm -f root/.bash_history
@@ -836,15 +842,22 @@ echo
 # Extract extra squashfs modules if DE config is set
 echo -e "\e[0;36mIf configured, extract extra .squashfs modules...\033[0m"
 
-[ "$DE_CONFIG" = "Xfce4" ] && unsquashfs -f -d chroot ../modules-forky/xfce4//*.squashfs 
-#[ "$DE_CONFIG" = "Jwm" ] && unsquashfs -f -d chroot ../modules-forky/jwm/*.squashfs
-[ "$DE_CONFIG" = "Mate" ] && unsquashfs -f -d chroot ../modules-forky/mate/*.squashfs
-[ "$DE_CONFIG" = "Lxqt" ] && unsquashfs -f -d chroot ../modules-forky/lxqt/*.squashfs
-[ "$DE_CONFIG" = "Lxqt_Full" ] && unsquashfs -f -d chroot ../modules-forky/lxqt/*.squashfs
-[ "$DE_CONFIG" = "DDog" ] && unsquashfs -f -d chroot ../modules-forky/ddog/*.squashfs
-[ "$DE_CONFIG" = "ObDog" ] && unsquashfs -f -d chroot ../modules-forky/obdog/*.squashfs
-[ "$DE_CONFIG" = "ChromeDog" ] && unsquashfs -f -d chroot ../modules-forky/chromedog/*.squashfs
-[ "$DE_CONFIG" = "Tint2" ] && unsquashfs -f -d chroot ../modules-forky/tint2/*.squashfs
+#[ "$DE_CONFIG" = "Xfce4" ] && unsquashfs -f -d chroot ../modules-forky/xfce4/*.squashfs
+[ "$DE_CONFIG" = "Xfce4" ] && cp -af ../modules-forky/xfce4/* chroot/
+#[ "$DE_CONFIG" = "Mate" ] && unsquashfs -f -d chroot ../modules-forky/mate/*.squashfs
+[ "$DE_CONFIG" = "Mate" ] && cp -af ../modules-forky/mate/* chroot/
+#[ "$DE_CONFIG" = "Lxqt" ] && unsquashfs -f -d chroot ../modules-forky/lxqt/*.squashfs
+[ "$DE_CONFIG" = "Lxqt" ] && cp -af ../modules-forky/lxqt/* chroot/
+#[ "$DE_CONFIG" = "Lxqt_Full" ] && unsquashfs -f -d chroot ../modules-forky/lxqt/*.squashfs
+[ "$DE_CONFIG" = "Lxqt_Full" ] && cp -af ../modules-forky/lxqt/* chroot/
+#[ "$DE_CONFIG" = "DDog" ] && unsquashfs -f -d chroot ../modules-forky/ddog/*.squashfs
+[ "$DE_CONFIG" = "DDog" ] && cp -af ../modules-forky/ddog/* chroot/ 
+#[ "$DE_CONFIG" = "ObDog" ] && unsquashfs -f -d chroot ../modules-forky/obdog/*.squashfs
+[ "$DE_CONFIG" = "ObDog" ] && cp -af ../modules-forky/obdog/* chroot/ 
+#[ "$DE_CONFIG" = "ChromeDog" ] && unsquashfs -f -d chroot ../modules-forky/chromedog/*.squashfs
+ [ "$DE_CONFIG" = "ChromeDog" ] && cp -af ../modules-forky/chromedog/* chroot/
+#[ "$DE_CONFIG" = "Tint2" ] && unsquashfs -f -d chroot ../modules-forky/tint2/*.squashfs
+[ "$DE_CONFIG" = "Tint2" ] && cp -af ../modules-forky/tint2/* chroot/
 
 echo -e "\e[0;36mCopy contents (if exist) of rootcopy directory...\033[0m"
 find ../rootcopy -mindepth 1 ! -name ReadMe -exec cp -af "{}" chroot/ \; 2> /dev/null
