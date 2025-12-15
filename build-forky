@@ -16,6 +16,7 @@
 # 2025-11-05, install newest devuan-keyring on host before creating debootstrap base system
 # 2025-12-01, structure changes in repo, e.g. tar.gz archives are extracted
 # and added support for "extra-commands" script, will run /tmp/chroot/extra-commands
+# 2025-12-15, Changes for 32-bit build (i.e. install bookworm 686 kernel) and fixed that extra-commands wasn't copied to chroot
 
 # below uncommented will enable the snapshot repository, comment out to disable
 export SNAPSHOT="deb http://snapshot.debian.org/archive/debian/20240823 trixie main"
@@ -376,6 +377,8 @@ cr_build_info
 [ "$ISOUEFI" = "TRUE" ] && cp -a ../isodata-uefi isodata || cp -a ../isodata isodata
 ok_or_failed
 
+mkdir -p isodata/live/rootcopy  # create it, as github doesn't support empty directories
+
 #echo -e "\e[0;36mExtracting...\033[0m"
 #tar -zxf ../dog-boot-forky-20250929.tar.gz
 echo -e "\e[0;36mCopy scripts, required for porteus-boot, to the chroot...\033[0m"
@@ -390,6 +393,9 @@ ok_or_failed
 echo -e "\e[0;36mCopy .deb packages from ../debs (if existing) to chroot/tmp/...\033[0m"
 echo -e "\e[0;36mTo be installed at the end of the general install process\033[0m"
 find ../debs -name *.deb -exec cp -af "{}" chroot/tmp/ \; 2> /dev/null
+
+# copy 'extra-commands' script to chroot/tmp to be executed at the end of running in chroot
+cp -a ../extra-commands chroot/tmp/
 
 # mount bind some required directories from host filesystem
 mount --bind /proc chroot/proc
@@ -675,7 +681,13 @@ rm -f /tmp/*.deb 2> /dev/null
 ### install the kernel
 echo -e "\e[0;36mInstall the kernel, download and extract\033[0m"
 mkdir -p /tmp/tmpapt
-[ "$ARCH" = "i386" ] && apt-get -o dir::cache::archives="/tmp/tmpapt" install -d linux-image-686-pae -y
+
+if [ "$ARCH" = "i386" ]; then  # install bookworm kernel (linux-image-6.1)
+wget -q -O tmp.html http://deb.debian.org/debian/pool/main/l/linux/
+BWKERN=`cat tmp.html | grep -o -E "linux-image-6.1[^<>]*?i386.deb" | grep 686-pae-unsigned | grep -v ".-rt" | tail -1`
+wget http://deb.debian.org/debian/pool/main/l/linux/$BWKERN -O /tmp/tmpapt/$BWKERN
+fi
+#[ "$ARCH" = "i386" ] && apt-get -o dir::cache::archives="/tmp/tmpapt" install -d linux-image-686-pae -y
 [ "$ARCH" = "amd64" ] && apt-get -o dir::cache::archives="/tmp/tmpapt" install -d linux-image-amd64 -y
 
 L_IMG=$(ls -S /tmp/tmpapt | head -1)
