@@ -18,6 +18,7 @@
 # and added support for "extra-commands" script, will run /tmp/chroot/extra-commands
 # 2025-12-15, Changes for 32-bit build (i.e. install bookworm 686 kernel) and fixed that extra-commands wasn't copied to chroot
 # 2026-03-18, some major changes, e.g for kernel setup and fixed conflict for 'desktop-base' with logind
+# 2026-06-26, Fixed that debootstrap did not install and other small changes
 
 # below uncommented will enable the snapshot repository, comment out to disable
 export SNAPSHOT="deb http://snapshot.debian.org/archive/debian/20240823 trixie main"
