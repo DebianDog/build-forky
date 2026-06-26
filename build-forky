@@ -337,7 +337,7 @@ dpkg -i devuan-keyring_2025.08.09_all.deb
 # install debootstrap deb , fredx181 2025-11-01, changed to devuan version
 DEBOOTSTRAP=debootstrap_1.0.134devuan2_all.deb
 
-#dpkg -i "$DEBOOTSTRAP"
+dpkg -i "$DEBOOTSTRAP"
 
 if [ -z `which debootstrap` ] || [ ! -e /usr/share/debootstrap/scripts/forky ]; then
 	msg=" You don't have debootstrap installed.\nIt's a dependency of this program.\n Please install it."
@@ -359,9 +359,9 @@ echo -e "\e[0;36mSetting up debootstrap in forky/chroot\033[0m"
 echo -e "\e[0;36mThis may take a while...\033[0m"
 mkdir -p forky/chroot && cd forky &&
 if [ "$SYSTEMD" = "FALSE" ]; then  # no systemd, devuan
-debootstrap --arch=$ARCH --variant=minbase --include=curl,apt-transport-https,ca-certificates,initscripts,adduser freia chroot http://pkgmaster.devuan.org/merged
+debootstrap --arch=$ARCH --variant=minbase --include=curl,apt-transport-https,ca-certificates,initscripts,adduser,gpg freia chroot http://pkgmaster.devuan.org/merged
 else
-debootstrap --arch=$ARCH --variant=minbase --include=curl,apt-transport-https,ca-certificates,initscripts,adduser forky chroot http://deb.debian.org/debian/
+debootstrap --arch=$ARCH --variant=minbase --include=curl,apt-transport-https,ca-certificates,initscripts,adduser,gpg forky chroot http://deb.debian.org/debian/
 fi
 ret=$?
 echo $ret
@@ -495,20 +495,22 @@ deb http://deb.debian.org/debian forky main contrib non-free non-free-firmware
 
 ######### Support for xlibre (replacement for xorg) #########
     if [ "$ARCH" = "amd64" ]; then  # ONLY for amd64
-curl -fsSL https://xlibre-deb.github.io/key.asc | tee /etc/apt/keyrings/xlibre-deb.asc
-chmod a+r /etc/apt/keyrings/xlibre-deb.asc
+    mkdir -p /usr/share/keyrings
 if [ "$SYSTEMD" = "FALSE" ]; then
-### fredx181, for now install debian (forky) xlibre as there exist no devuan (freia) repo yet
-echo 'Types: deb deb-src
-URIs: https://xlibre-deb.github.io/debian/
-Suites: forky
-Components: main
+    curl -fsSL https://mrchicken.nexussfan.cz/publickey.asc | gpg --dearmor | tee /usr/share/keyrings/NexusSfan.pgp > /dev/null
+    chmod a+r /usr/share/keyrings/NexusSfan.pgp
+echo 'Types: deb
+URIs: https://xlibre-debian.github.io/devuan/
+Suites: main
+Components: testing
 Architectures: amd64
-Signed-By: /etc/apt/keyrings/xlibre-deb.asc
+Signed-By: /usr/share/keyrings/NexusSfan.pgp
 ' > /etc/apt/sources.list.d/xlibre-deb.sources
 
 else
-echo 'Types: deb deb-src
+curl -fsSL https://xlibre-deb.github.io/key.asc | tee /etc/apt/keyrings/xlibre-deb.asc
+chmod a+r /etc/apt/keyrings/xlibre-deb.asc
+echo 'Types: deb
 URIs: https://xlibre-deb.github.io/debian/
 Suites: forky
 Components: main
