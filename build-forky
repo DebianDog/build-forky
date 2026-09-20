@@ -709,7 +709,7 @@ else
 kernel=$(ls /tmp/tmpapt/usr/lib/modules/)  # kernel in usr/lib/modules
 cp -a /tmp/tmpapt/usr/lib/modules /lib/
 fi
-cp -a /tmp/tmpapt/boot/config-* /boot/
+cp -a /tmp/tmpapt/boot/config-* /boot/ 2> /dev/null
 depmod $kernel
 
 ############ End of installing packages ############
@@ -850,14 +850,22 @@ fi
 rm -fr chroot/var/tmp/*
 [ $LBINITRD = TRUE ] && mv -f  chroot/tmp/tmpapt/boot/initrd.img isodata/live/
 mv -f  chroot/tmp/initrd1.xz isodata/live/
-mv -f chroot/tmp/tmpapt/boot/vmlinuz-* isodata/live/vmlinuz1
+# mv -f chroot/tmp/tmpapt/boot/vmlinuz-* isodata/live/vmlinuz1
+
+### support also newer kernel 7.2 (that vmlinuz is /tmp/tmpapt/lib/modules/<kernel>/vmlinuz)
+[ -f chroot/tmp/tmpapt/boot/vmlinuz-* ] && mv chroot/tmp/tmpapt/boot/vmlinuz-* isodata/live/vmlinuz1 2> /dev/null || cp -a chroot/tmp/tmpapt/usr/lib/modules/*/vmlinuz isodata/live/vmlinuz1
+
+
 kernel=$(ls chroot/lib/modules/)
 
 mkdir -p $kernel/usr/lib/modules
 mkdir -p $kernel/boot
 
 mv chroot/lib/modules/* $kernel/usr/lib/modules/
-mv chroot/tmp/tmpapt/boot/config-* $kernel/boot/
+# mv chroot/tmp/tmpapt/boot/config-* $kernel/boot/
+
+### support also newer kernel 7.2 (that config is /tmp/tmpapt/lib/modules/<kernel>/config)
+[ -f chroot/tmp/tmpapt/boot/config-* ] && mv chroot/tmp/tmpapt/boot/config-* $kernel/boot/ 2> /dev/null || cp -a chroot/tmp/tmpapt/usr/lib/modules/*/config $kernel/boot/
 rm -fr chroot/tmp/*
 echo
 
