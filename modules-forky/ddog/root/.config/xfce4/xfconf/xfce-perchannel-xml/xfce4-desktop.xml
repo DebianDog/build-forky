@@ -1,50 +1,590 @@
 <?xml version="1.1" encoding="UTF-8"?>
 
 <channel name="xfce4-desktop" version="1.0">
-  <property name="desktop-icons" type="empty">
-    <property name="style" type="empty"/>
-    <property name="file-icons" type="empty">
-      <property name="show-home" type="empty"/>
-      <property name="show-filesystem" type="empty"/>
-      <property name="show-removable" type="bool" value="true"/>
-      <property name="show-trash" type="empty"/>
-    </property>
-    <property name="icon-size" type="empty"/>
-    <property name="tooltip-size" type="empty"/>
-  </property>
+  <property name="last-settings-migration-version" type="uint" value="1"/>
   <property name="backdrop" type="empty">
     <property name="screen0" type="empty">
       <property name="monitor0" type="empty">
-        <property name="image-path" type="empty"/>
-        <property name="image-style" type="empty"/>
-        <property name="image-show" type="empty"/>
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDP-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitoreDP-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorVGA-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-D-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-A-0" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
       </property>
       <property name="monitor1" type="empty">
-        <property name="image-path" type="empty"/>
-        <property name="image-style" type="empty"/>
-        <property name="image-show" type="empty"/>
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
       </property>
-      <property name="monitor2" type="empty">
-        <property name="image-path" type="empty"/>
-        <property name="image-style" type="empty"/>
-        <property name="image-show" type="empty"/>
+      <property name="monitorHDMI-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
       </property>
-      <property name="monitor3" type="empty">
-        <property name="image-path" type="empty"/>
-        <property name="image-style" type="empty"/>
-        <property name="image-show" type="empty"/>
+      <property name="monitorDP-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
       </property>
       <property name="monitoreDP-1" type="empty">
         <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorVGA-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-D-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-A-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitor2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDP-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitoreDP-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorVGA-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-D-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-A-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitor3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDP-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitoreDP-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorVGA-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorDVI-D-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-A-3" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="image-style" type="int" value="5"/>
           <property name="last-image" type="string" value="/usr/share/images/desktop-base/12.jpg"/>
         </property>
       </property>
     </property>
   </property>
-  <property name="desktop-menu" type="empty">
-    <property name="show" type="empty"/>
+  <property name="desktop-icons" type="empty">
+    <property name="icon-size" type="uint" value="36"/>
   </property>
-  <property name="last-settings-migration-version" type="uint" value="1"/>
   <property name="last" type="empty">
     <property name="window-width" type="int" value="672"/>
     <property name="window-height" type="int" value="538"/>
