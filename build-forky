@@ -756,6 +756,13 @@ apt install locales -y
 dpkg-reconfigure locales
 fi
 
+# Update /usr/share/icons/hicolor/index.theme
+update-icon-caches usr/share/icons/*/
+
+# Update /usr/share/applications/mimeinfo.cache
+# It is need to do after change .desktop files
+update-desktop-database
+
 # finally, run script /tmp/extra-commands
 /tmp/extra-commands
 
